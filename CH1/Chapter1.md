@@ -1,5 +1,7 @@
 
 
+
+
 # Chapter 1
 
 ## 1.1 Introduction
@@ -87,3 +89,63 @@ $$
 instantaneous throughput at any instant of time is the rate at which host is receiving the file.
 average throughput
 Bottleneck link
+
+
+
+## 1.5 Protocol Layers and Their Service Models
+### 1.5.1
+* Service model of a layer is the services that a layer offers to the layer above.
+* Each layer provides its service by
+* 1. Performing certain actions within that layer
+* 2. using the services of the layer directly below it.
+
+Drawback of layering:
+1. one layer may duplicate lower-layer functionality. For example, many protocol stacks provide error recoveryon both a per-link basis and an end-to-end basis.
+2. Functionality at one layer may need information that is present only in another layer, this violates the goal of separation of layers.
+
+The protocols of the various layers are called the protocol stack. The Internet protocol stack consists of five layers: the physical, link, network, transport and application layers.
+1. application layer
+* The application layer is where network applications and their application-layer protocols reside.
+*  The Internet's application layer includes many protocols, such as the HTTP, SMTP, and FTP.
+* The packet of information at the application layer is message.
+
+2. Transport Layer 
+ * The Internet's transport layer transports application-layer messages between application endpoints. In the Internet there are two transport protocols, TCP and UDP
+ * The transport-layer packet is called segment in this book
+
+3. Network Layer
+* The Internet's network layer is responsible for moving network-layer packets known as datagrams from one host to another. 
+* The internet's network layer includes the IP protocol and many routing protocols. But the most important is IP protocol, so it is often simply referred to as the IP layer.
+* The Internet's network layer routes a datagram through a series of routers between the source and destination.
+* The network-layer packet is called datagram in this book
+
+4. Link Layer
+* link layer provide transform between node and node. The network layer passes the datagram down to the link layer, which delivers the datagram to the next node along the route. At this next node, the link layer passes the datagram up to the network layer.
+* The services provided by the link layer depend on the specific link-layer protocol.
+* Examples of link-layer protocols include Ethernet, WIFI, and the cable access network's DOCSIS protocl.
+* The link-layer packet is called frame in this book
+
+5. Physical Layer
+* The job of the physical layer is to move the individual bits within the frame from one node to the next. 
+* The protocols in this layer are again depend on the actual transmission medium of the link(for example, twisted-pair copper wire, single-mode fiber optics)
+
+### 1.5.2 Encapsulation
+![Screenshot from 2019-10-16 03-00-23](Screenshot from 2019-10-16 03-00-23.png)
+
+
+
+## 1.6 Networks Under Attack
+Much of the malware out there today is self-replicating
+Viruses are malware that require some form of user interaction to infect the user's device.
+Worms are malware that can enter a device without any explicit user interaction.
+
+denial-of-service(DoS) attacks.
+a DoS attack renders a network, host, or other piece of infrastructure unusable by legitimate users.
+Method: Vulnerability attack, Bandwidth flooding
+distributed DoS(DDoS) attack
+![Screenshot from 2019-10-16 03-08-57](Screenshot from 2019-10-16 03-08-57.png)
+
+packet sniffer
+
+IP spoofing
+
