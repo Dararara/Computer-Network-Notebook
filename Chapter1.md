@@ -1,4 +1,7 @@
+
+
 # Chapter 1
+
 ## 1.1 Introduction
 End system access the Internet through Internet Service Providers(ISPs), including residential ISPs such as local cable or telephone companies; corporate ISPs; university ISPs...
 
@@ -62,8 +65,25 @@ A circuit in a link is implemented with either frequency-division multiplexing(F
 Circuit switching is wasteful because the dedicated circuits are idle during silent periods.
 
 ### 1.3.3 A Network of Network
-(here need a screenshot from P34)
 
-## Delay, Loss, and Throughput in Packet-Switched Network
-total delay = nodal processing delay + queuing delay + transmission delay + propagation delay
-(here need a screenshot from P36)
+![Screenshot from 2019-10-16 00-48-11](Screenshot from 2019-10-16 00-48-11.png)
+
+
+## 1.4 Delay, Loss, and Throughput in Packet-Switched Network
+total delay = nodal processing delay + queuing delay + transmission delay + propagation delay![Screenshot from 2019-10-16 00-48-21](Screenshot from 2019-10-16 00-48-21.png)
+
+
+
+queuing delay depends on traffic intensity: La/R, say a file is L bits, one second comes a files, and the transmit rate of the router is R. If La/R < 1, no delay, if La/R > 1, the delay can be huge.(especially the average La/R > 1)
+
+Suppose there are N-1 routers between the source host and the destination host.
+$$
+d_{end-end} = N(d_{proc} + d_{transmit} + d_{propagation})
+$$
+
+
+
+### 1.4.4 Throughput in Computer Networks
+instantaneous throughput at any instant of time is the rate at which host is receiving the file.
+average throughput
+Bottleneck link
