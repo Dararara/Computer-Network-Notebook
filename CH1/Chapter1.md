@@ -59,7 +59,7 @@ The Internet has a number of special routing protocols that are used to automati
 ### 1.3.2 Circuit Switching
 There are two fundamental approaches to moving data through a network of links and switches: circuit switching and packet switching.
 In circuit switching, the network establishes a dedicated end-to-end connection between the two hosts.
-Once the circuit established, it reserves a constant transmission rate in the network's links. The sendercan transfer data to the receiver  at the guaranteed constant rate.
+Once the circuit established, it reserves a constant transmission rate in the network's links. The sender can transfer data to the receiver  at the guaranteed constant rate.
 
 #### Multiplexing in Circuit-Switched Networks
 A circuit in a link is implemented with either frequency-division multiplexing(FDM) or time-division multiplexing(TDM).

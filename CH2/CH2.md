@@ -3,8 +3,6 @@
 Application architecture
 
 ## 2.1
-### 
-
 #### client-server architecture: 
 * there is an always-on host, called server, which services requests from many other hosts.
 * Since one server may not enough, there are some data center.
@@ -93,3 +91,27 @@ cookie:1678 everytime
 #### conditional GET
 get with if-modified-since:
 if not modified, return the cache, this will save bandwidth and time
+
+
+
+## 2.3 Electronic Mail in the Internet
+![Snipaste_2019-10-29_23-09-05](Snipaste_2019-10-29_23-09-05.png)
+The three major components: user agent, mail servers, Simple Mail Transfer Protocol(SMTP)
+
+SMTP连接为直接连接，没有中介服务器
+### Different between HTTP and SMTP
+1. 
+SMTP is mainly a push protocol
+HTTP is mainly a pull protocol
+2. 
+SMTP requires each message to be in 7-bit ASCII format
+HTTP data dose not impose this restriction
+3. 
+HTTP encapsulates each object in its own HTTP response message.
+SMTP places all of the message's objects into one message.
+
+### Mail Access Protocol
+
+![Snipaste_2019-10-30_00-01-50](Snipaste_2019-10-30_00-01-50.png)
+因为用户的电脑不可能一直开机联网，所以邮件传输需要中介服务器，根据图中的信息，Alice发送的邮件可以通过SMTP传输到Bob的mail server那里，但因为SMTP是push的协议，所以Bob无法用SMTP协议接收邮件，为了实现这个需求，我们有三个协议可以使用POP3（相对简单，功能较弱），IMAP，和HTTP（因为很多网页版的邮件，所以被广泛使用）
+
