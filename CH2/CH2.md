@@ -115,3 +115,41 @@ SMTP places all of the message's objects into one message.
 ![Snipaste_2019-10-30_00-01-50](Snipaste_2019-10-30_00-01-50.png)
 因为用户的电脑不可能一直开机联网，所以邮件传输需要中介服务器，根据图中的信息，Alice发送的邮件可以通过SMTP传输到Bob的mail server那里，但因为SMTP是push的协议，所以Bob无法用SMTP协议接收邮件，为了实现这个需求，我们有三个协议可以使用POP3（相对简单，功能较弱），IMAP，和HTTP（因为很多网页版的邮件，所以被广泛使用）
 
+## 2.4DNS
+### hierarchy of DNS server
+root 
+TLD(Top-level Domain): country
+authoritative: organization
+
+local DNS server
+
+![Snipaste_2019-10-30_23-22-14](Snipaste_2019-10-30_23-22-14.png)
+
+这里面包含了迭代查询和递归查询，因为TLD很可能不直接知道authoritative DNS server的IP，只知道谁知道那个IP，所以在第三层，实际做了两次查询，是一个递归操作
+
+DNS type
+
+(name, value, type, ttl)
+
+A: address of a host(relay.bar.foo.com, 127.0.0.1)
+
+NS: name is domain and value is host (foo.com, dns.foo.com)
+
+CNAME: canonical name(foo.com, relay.bar.foo.com)
+
+MX: for mail(foo.com, mail.bar.foo.com)
+
+In authoritative server, it contains A
+
+In TLD, it contains A which is cached, it also contains NS, A pair for the DNS, such as (foo.com, dns.foo.com, NS), (dns.foo.com, 127.0.0.1, A)
+
+![Snipaste_2019-10-30_23-45-41](Snipaste_2019-10-30_23-45-41.png)
+
+Identification用来作为识别号，让client识别response是哪个request的，response时要附带相同的identification。
+
+FLags：有很多。1bit for query or quest, 1 bit for authoritative or not, 1 bit for 递归与否
+
+Authority包括其他服务器的记录
+
+additional记录很多其他数据，比如canonical name之类的？
+
