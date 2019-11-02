@@ -103,7 +103,7 @@ Go-Back-N(GBN) protocol
 
 GBN有四部分组成，第一部分是已经确定的，第二部分是已经发了但是没收到ACK的，第三部分是可以发的，第四部分是暂时用不上的
 
-GBN本身![Snipaste_2019-11-02_15-19-58](../../../../Desktop/Snipaste_2019-11-02_15-19-58.png)就是一个sliding window protocol
+GBN本身就是一个sliding window protocol
 
 ![Snipaste_2019-11-02_15-19-58](Snipaste_2019-11-02_15-19-58-1572679217308.png)
 
