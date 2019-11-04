@@ -100,7 +100,7 @@ Bottleneck link
 * 2. using the services of the layer directly below it.
 
 Drawback of layering:
-1. one layer may duplicate lower-layer functionality. For example, many protocol stacks provide error recoveryon both a per-link basis and an end-to-end basis.
+1. one layer may duplicate lower-layer functionality. For example, many protocol stacks provide error recovery on both a per-link basis and an end-to-end basis.
 2. Functionality at one layer may need information that is present only in another layer, this violates the goal of separation of layers.
 
 The protocols of the various layers are called the protocol stack. The Internet protocol stack consists of five layers: the physical, link, network, transport and application layers.

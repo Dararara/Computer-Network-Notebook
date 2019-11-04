@@ -1,6 +1,6 @@
 
 
-Application architecture
+# Application architecture
 
 ## 2.1
 #### client-server architecture: 
@@ -100,14 +100,11 @@ The three major components: user agent, mail servers, Simple Mail Transfer Proto
 
 SMTP连接为直接连接，没有中介服务器
 ### Different between HTTP and SMTP
-1. 
-SMTP is mainly a push protocol
+1. SMTP is mainly a push protocol
 HTTP is mainly a pull protocol
-2. 
-SMTP requires each message to be in 7-bit ASCII format
+2. SMTP requires each message to be in 7-bit ASCII format
 HTTP data dose not impose this restriction
-3. 
-HTTP encapsulates each object in its own HTTP response message.
+3. HTTP encapsulates each object in its own HTTP response message.
 SMTP places all of the message's objects into one message.
 
 ### Mail Access Protocol
